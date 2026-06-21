@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Level Kitchen Uzbekcha",
+  "description": "Sog\u0027lom turmush tarzi va to\u0027g\u0027ri ovqatlanish taomlarini yetkazib berish xizmati",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
