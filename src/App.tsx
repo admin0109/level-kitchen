@@ -53,162 +53,245 @@ export default function App() {
   };
 
   return (
-    <div className="bg-sage-100 font-sans text-sage-800 selection:bg-sage-300 antialiased min-h-screen">
+    <div className="bg-slate-950 font-sans text-slate-100 selection:bg-amber-500/30 antialiased min-h-screen">
       {/* 1. Header Navigation Panel */}
-      <header className="sticky top-0 z-40 bg-sage-100/95 backdrop-blur-md border-b border-sage-300/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="p-2 bg-sage-800 text-white rounded-xl shadow-xs">
-              <Leaf className="w-5 h-5 text-sage-300" />
-            </span>
+      <header className="sticky top-0 z-40 bg-slate-950/95 backdrop-blur-sm border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex items-center gap-3">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-amber-300 text-slate-950 font-black text-lg shadow-lg shadow-amber-500/20">
+              LK
+            </div>
             <div>
-              <span className="text-xl font-display font-extrabold tracking-tight text-sage-800 flex items-center gap-1">
-                Level <span className="text-sage-500 font-serif font-semibold">Kitchen</span>
-              </span>
-              <span className="text-[10px] text-sage-olive font-bold uppercase tracking-widest block -mt-1 font-mono">UZBEKISTAN</span>
+              <p className="text-lg font-display font-black tracking-tight text-white">Level <span className="text-amber-300">Kitchen</span></p>
+              <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">Sog‘lom ovqatlanish</p>
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm font-semibold text-sage-olive">
-            <a href="#advantages-section" className="hover:text-sage-800 transition-colors">Afzalliklarimiz</a>
-            <a href="#programs-section" className="hover:text-sage-800 transition-colors">Ratsionlarimiz</a>
-            <a href="#calculator-section" className="hover:text-sage-800 transition-colors">Kalkulyator</a>
-            <a href="#testimonials-section" className="hover:text-sage-800 transition-colors">Mijozlar fikrlari</a>
-            <a href="#faq-section" className="hover:text-sage-800 transition-colors">Ko‘p so‘raladigan savollar</a>
+          <nav className="hidden xl:flex items-center gap-8 text-sm font-medium text-slate-400">
+            <a href="#programs-section" className="hover:text-white transition-colors">Ratsionlar</a>
+            <a href="#calculator-section" className="hover:text-white transition-colors">Kalkulyator</a>
+            <a href="#testimonials-section" className="hover:text-white transition-colors">Fikrlar</a>
+            <a href="#faq-section" className="hover:text-white transition-colors">Savollar</a>
           </nav>
 
           <div className="flex items-center gap-3">
-            <a 
-              href="tel:+998712000202" 
-              className="hidden lg:flex items-center gap-1.5 text-xs font-mono font-bold text-sage-850 bg-white px-3.5 py-2 rounded-xl border border-sage-300 hover:bg-sage-50 transition-colors"
+            <a
+              href="tel:+998712000202"
+              className="hidden lg:inline-flex items-center gap-2 rounded-2xl border border-slate-800 bg-slate-900/80 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300 hover:bg-slate-800 transition"
             >
-              <Phone className="w-3.5 h-3.5 text-sage-550 animate-pulse text-sage-500" /> +998 (71) 200-02-02
+              <Phone className="w-3.5 h-3.5 text-amber-300" /> +998 71 200-02-02
             </a>
             <button
               onClick={() => handleOrderNow(activeProgram)}
-              className="bg-sage-800 hover:bg-sage-900 text-white text-xs sm:text-sm font-extrabold py-2.5 px-4 rounded-xl transition-all hover:shadow-sm active:scale-95 cursor-pointer"
-              id="header-order-btn"
+              className="rounded-2xl bg-amber-300 px-5 py-3 text-sm font-bold uppercase tracking-[0.1em] text-slate-950 shadow-lg shadow-amber-500/20 hover:bg-amber-200 transition"
             >
-              Hozir buyurtma berish
+              Buyurtma
             </button>
           </div>
         </div>
       </header>
 
       {/* 2. HERO PART */}
-      <section className="relative overflow-hidden pt-12 pb-20 md:pt-16 md:pb-28 border-b border-sage-300" id="hero-section">
-        {/* Decorative ambient elements */}
-        <div className="absolute top-1/4 -left-36 w-96 h-96 bg-sage-400/20 rounded-full blur-3xl -z-10" />
-        <div className="absolute top-1/2 right-0 w-80 h-80 bg-sage-200/40 rounded-full blur-3xl -z-10" />
-
+      <section className="relative overflow-hidden pb-24 pt-12" id="hero-section">
+        <div className="absolute inset-x-0 top-0 h-72 bg-gradient-to-b from-amber-500/15 to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Text content - Left Column */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-1 px-3 py-1 bg-sage-200 text-sage-800 text-xs font-semibold rounded-full uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-sage-550 text-sage-600" /> Premium ovqatlanish xizmati
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/85 px-4 py-2 text-xs uppercase tracking-[0.24em] text-amber-300 font-semibold">
+                <Sparkles className="w-4 h-4" /> Premium kutishsiz ratsionlar
               </div>
-              
-              {/* Beautiful, Literary Uzbek Headings */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-display font-extrabold text-sage-800 tracking-tight leading-tight" id="hero-heading">
-                Har kunlik ovqat tayyorlash tashvishini unuting — <span className="underline decoration-sage-500 underline-offset-4 decoration-4">Sog'lom va mazali taomlar</span> eshigingiz tagida!
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black tracking-tight leading-tight text-white">
+                Endi <span className="text-amber-300">sog‘lom ovqat</span> har kuni siz bilan.
               </h1>
-
-              <p className="text-base sm:text-lg text-sage-olive leading-relaxed font-normal max-w-2xl" id="hero-description">
-                Sizda ham pishirishga vaqt yetmaydimi? Har kunlik kaloriyalarni hisoblash charchatdimi? 
-                <strong> Level Kitchen</strong> sizning muammoingizga mukammal yechim taklif etadi. Biz professional oshpazlar tomonidan tayyorlangan, mutaxassis dietologlar tomonidan muvozanatlashtirilgan va har kuni ertalab eshigingizgacha yetkazib beriladigan 100% tabiiy taomlar to’plamini taqdim etamiz. Sog'lom ovqatlanish endi qiyin emas, balki haqiqiy zavqdir!
+              <p className="max-w-2xl text-slate-300 text-base sm:text-lg leading-relaxed">
+                Level Kitchen o‘ziga xos balanslangan ratsionlar, tez yetkazib berish va fitnesga mos menyu bilan sizni kundalik energiya bilan boyitadi.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a
                   href="#programs-section"
-                  className="bg-sage-800 hover:bg-sage-900 text-white font-extrabold py-3.5 px-6 rounded-2xl shadow-xs transition-all text-center text-sm md:text-base cursor-pointer hover:-translate-y-0.5"
-                  id="hero-see-programs-btn"
+                  className="inline-flex items-center justify-center rounded-full bg-amber-300 px-7 py-3 text-sm font-bold uppercase tracking-[0.15em] text-slate-950 shadow-lg shadow-amber-500/20 transition hover:bg-amber-200"
                 >
-                  Ratsionlarni tanlash
+                  Ratsionlar
                 </a>
                 <a
                   href="#calculator-section"
-                  className="bg-white hover:bg-sage-50 border border-sage-300 text-sage-800 font-bold py-3.5 px-6 rounded-2xl shadow-xs transition-all text-center text-sm md:text-base flex items-center justify-center gap-2 cursor-pointer"
-                  id="hero-use-calculator-btn"
+                  className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/90 px-7 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-slate-200 transition hover:border-amber-300 hover:text-white"
                 >
-                  <Sliders className="w-4 h-4 text-sage-500" /> Kunlik kkalni hisoblash
+                  Kalkulyator
                 </a>
               </div>
 
-              {/* Instant Social / Quality Proof Lines */}
-              <div className="grid grid-cols-3 gap-4 pt-6 md:pt-8 border-t border-sage-300">
-                <div>
-                  <div className="text-xl md:text-2xl font-display font-black text-sage-800">100%</div>
-                  <div className="text-xs text-sage-olive font-medium">Tabiiy mahsulotlar</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+                <div className="rounded-[2rem] border border-slate-800 bg-slate-900/90 p-5 shadow-xl">
+                  <p className="text-xs uppercase tracking-[0.25em] text-slate-500">Tabiiy</p>
+                  <p className="mt-3 text-2xl font-bold text-white">100% mahsulot</p>
                 </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-display font-black text-sage-800">75+ xil</div>
-                  <div className="text-xs text-sage-olive font-medium">Mualliflik menyusi</div>
+                <div className="rounded-[2rem] border border-slate-800 bg-slate-900/90 p-5 shadow-xl">
+                  <p className="text-xs uppercase tracking-[0.25em] text-slate-500">Menyu</p>
+                  <p className="mt-3 text-2xl font-bold text-white">75+ retsept</p>
                 </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-display font-black text-sage-800">0% kkal</div>
-                  <div className="text-xs text-sage-olive font-medium">Yashirin qo'shimchalar</div>
+                <div className="rounded-[2rem] border border-slate-800 bg-slate-900/90 p-5 shadow-xl">
+                  <p className="text-xs uppercase tracking-[0.25em] text-slate-500">Yetkazish</p>
+                  <p className="mt-3 text-2xl font-bold text-white">06:00 - 10:00</p>
                 </div>
               </div>
             </div>
 
-            {/* Visual banner column - Right Column */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-sm lg:max-w-none">
-                {/* Visual shadow backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-sage-800/10 to-sage-400/20 rounded-3xl rotate-3 blur-md scale-98 -z-10 opacity-30" />
-                
-                {/* Elite interactive showcase container */}
-                <div className="bg-white p-4 sm:p-5 rounded-3xl border border-sage-200 shadow-sm relative">
-                  <div className="absolute top-3 right-3 bg-sage-800 text-white text-[10px] font-bold px-2 py-1 rounded-lg uppercase font-mono tracking-widest z-10">
-                    Sog'lom hayot
+            <div className="relative">
+              <div className="rounded-[2.5rem] border border-amber-300/20 bg-slate-900/95 p-6 shadow-2xl shadow-slate-950/40">
+                <div className="flex items-center justify-between gap-4 mb-6">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.25em] text-amber-300/80">Tanlangan ratsion</p>
+                    <h2 className="mt-2 text-3xl font-black text-white">{activeProgram.name}</h2>
                   </div>
+                  <span className="rounded-2xl bg-slate-950/80 px-4 py-2 text-sm font-semibold text-slate-200 border border-slate-800">{activeProgram.kcalRange}</span>
+                </div>
+
+                <img
+                  src={activeProgram.image}
+                  alt={activeProgram.name}
+                  referrerPolicy="no-referrer"
+                  className="w-full aspect-[4/3] rounded-[2rem] object-cover border border-slate-800"
+                />
+
+                <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-slate-300">
+                  <div className="rounded-3xl bg-slate-950/90 p-4 border border-slate-800 text-center">
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">Narxi</p>
+                    <p className="mt-2 text-xl font-bold text-white">{activeProgram.pricePerDay.toLocaleString('uz-UZ')} UZS</p>
+                  </div>
+                  <div className="rounded-3xl bg-slate-950/90 p-4 border border-slate-800 text-center">
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">Yetkazish</p>
+                    <p className="mt-2 text-xl font-bold text-white">Har kuni</p>
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-[2rem] bg-slate-800/80 p-5 border border-slate-700">
+                  <div className="flex justify-between text-xs uppercase tracking-[0.25em] text-slate-500 mb-4">
+                    <span>Oqsil</span>
+                    <span>Yog‘</span>
+                    <span>Uglevod</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-3 text-center">
+                    <div className="rounded-3xl bg-slate-950/90 p-3">{activeProgram.macros.protein}g</div>
+                    <div className="rounded-3xl bg-slate-950/90 p-3">{activeProgram.macros.fat}g</div>
+                    <div className="rounded-3xl bg-slate-950/90 p-3">{activeProgram.macros.carbs}g</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] rounded-[2rem] border border-amber-400/20 bg-amber-400/10 p-4 text-center text-sm text-amber-100 shadow-xl shadow-amber-500/20">
+                <strong>Mutaxassis dietologlar tomonidan boshqariladigan menyu.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. PROGRAMS DESCRIPTION SECTION */}
+      <section className="py-24 bg-slate-900" id="programs-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="text-xs uppercase tracking-[0.28em] text-amber-300 font-bold">Ratsionlar</span>
+            <h2 className="mt-4 text-4xl md:text-5xl font-display font-black text-white tracking-tight">Maqsadingizga mos dastur tanlang</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-400 text-base leading-relaxed">
+              Sizning energiya sarfingizga mos ravishda tuzilgan 3 ta ratsion, har biri o‘zgacha taomlarni taqdim etadi.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
+            <div className="space-y-4">
+              {programsData.map((prog) => (
+                <button
+                  key={prog.id}
+                  type="button"
+                  id={`program-tab-${prog.id}`}
+                  onClick={() => setSelectedProgramId(prog.id)}
+                  className={`w-full rounded-[2rem] border p-6 text-left transition-all ${
+                    selectedProgramId === prog.id
+                      ? 'border-amber-300/40 bg-slate-800 text-white shadow-2xl'
+                      : 'border-slate-800 bg-slate-950/70 text-slate-300 hover:border-amber-300/20 hover:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.25em] text-amber-300/80 font-semibold">{prog.kcalRange}</p>
+                      <h3 className="mt-3 text-xl font-bold">{prog.name}</h3>
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-amber-300" />
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-slate-400">{prog.description}</p>
+                </button>
+              ))}
+            </div>
+
+            <div className="rounded-[2.5rem] border border-slate-800 bg-slate-950/90 p-8 shadow-2xl">
+              <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] items-start">
+                <div className="rounded-[2rem] overflow-hidden border border-slate-800 bg-slate-900">
                   <img
                     src={activeProgram.image}
                     alt={activeProgram.name}
                     referrerPolicy="no-referrer"
-                    className="w-full aspect-4/3 object-cover rounded-2xl"
-                    id="hero-showcase-image"
+                    className="h-full w-full object-cover"
                   />
-                  <div className="mt-4 pt-3 border-t border-sage-200 flex justify-between items-center bg-white">
-                    <div>
-                      <span className="text-[10px] uppercase text-sage-olive font-bold tracking-wider">Tanlangan ratsion</span>
-                      <h4 className="font-display font-extrabold text-sage-800 text-base">{activeProgram.name}</h4>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-xs text-sage-olive block font-medium">Kuniga faqat</span>
-                      <span className="text-sm font-black text-sage-800 font-mono">
-                        {activeProgram.pricePerDay.toLocaleString('uz-UZ')} UZS
-                      </span>
-                    </div>
-                  </div>
                 </div>
 
-                {/* Micro Floater 1: Delivery badge */}
-                <div className="absolute -bottom-6 -left-4 bg-white border border-sage-200 p-3 rounded-2xl shadow-sm flex items-center gap-2.5 max-w-xs">
-                  <span className="p-2 bg-sage-100 text-sage-800 rounded-xl">
-                    <Clock className="w-5 h-5 text-sage-500" />
-                  </span>
-                  <div>
-                    <h5 className="text-xs font-bold text-sage-800">Har kuni bepul yetkazish</h5>
-                    <p className="text-[10px] text-sage-olive font-medium">06:00 - 10:00 oralig'ida</p>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex rounded-full bg-amber-300/15 px-3 py-1 text-xs uppercase tracking-[0.25em] text-amber-200">{activeProgram.kcalRange}</span>
+                    <span className="inline-flex items-center gap-2 rounded-full bg-slate-800/80 px-3 py-1 text-xs text-slate-300 border border-slate-700">
+                      <Award className="w-4 h-4 text-amber-300" /> Dietologlar tavsiyasi
+                    </span>
                   </div>
-                </div>
+                  <h3 className="text-3xl font-display font-black text-white">{activeProgram.heading}</h3>
+                  <p className="text-slate-400 leading-relaxed">{activeProgram.description}</p>
 
-                {/* Micro Floater 2: Calorie count */}
-                <div className="absolute -top-5 -right-3 bg-sage-800 text-white p-3 rounded-2xl shadow-sm flex items-center gap-2">
-                  <span className="p-1.5 bg-sage-500 text-white rounded-lg">
-                    <Flame className="w-4 h-4 fill-white text-white" />
-                  </span>
-                  <div>
-                    <span className="text-[10px] text-sage-300 block -mb-0.5 uppercase tracking-widest">Muvozanatli</span>
-                    <span className="text-xs font-mono font-bold text-white">{activeProgram.kcalRange}</span>
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="rounded-[1.5rem] bg-slate-900/90 p-4 border border-slate-800 text-center">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300/80">Oqsil</p>
+                      <p className="mt-2 text-2xl font-bold text-white">{activeProgram.macros.protein}g</p>
+                    </div>
+                    <div className="rounded-[1.5rem] bg-slate-900/90 p-4 border border-slate-800 text-center">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300/80">Yog‘</p>
+                      <p className="mt-2 text-2xl font-bold text-white">{activeProgram.macros.fat}g</p>
+                    </div>
+                    <div className="rounded-[1.5rem] bg-slate-900/90 p-4 border border-slate-800 text-center">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-amber-300/80">Uglevod</p>
+                      <p className="mt-2 text-2xl font-bold text-white">{activeProgram.macros.carbs}g</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
+              <div className="mt-10 space-y-4">
+                {activeProgram.meals.map((meal) => (
+                  <div key={meal.id} className="rounded-[1.75rem] border border-slate-800 bg-slate-900/80 p-5 text-slate-300">
+                    <div className="flex items-center justify-between gap-3">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.25em] text-amber-300/80">{meal.type}</p>
+                        <p className="mt-2 text-sm font-semibold text-white">{meal.name}</p>
+                      </div>
+                      <span className="text-sm font-bold text-amber-300">{meal.kcal} kcal</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.25em] text-slate-500">Kunlik narx</p>
+                  <p className="mt-2 text-3xl font-black text-white font-mono">{activeProgram.pricePerDay.toLocaleString('uz-UZ')} UZS</p>
+                </div>
+                <button
+                  type="button"
+                  id={`active-order-trigger-${activeProgram.id}`}
+                  onClick={() => handleOrderNow(activeProgram)}
+                  className="inline-flex items-center justify-center rounded-full bg-amber-300 px-8 py-4 text-sm font-bold uppercase tracking-[0.1em] text-slate-950 shadow-xl shadow-amber-500/20 hover:bg-amber-200 transition"
+                >
+                  Buyurtma berish
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
